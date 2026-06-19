@@ -85,7 +85,10 @@ void MyString::MyStrcpy(MyString& obj)
 	delete[] str;
 	length = obj.length;
 	str = new char[length + 1];
-	strcpy_s(str, length + 1, obj.str);
+	for (int i = 0; i <= length; i++)
+	{
+		str[i] = obj.str[i];
+	}
 }
 
 bool MyString::MyStrStr(const char* str)
@@ -316,13 +319,24 @@ MyString operator+(char c, const MyString& obj)
 	return temp;
 }
 
-MyString operator+(int count, const MyString& obj)
+MyString operator+(int count, const MyString& obj) // в задании написано в конец строки, но obj + 10 уже это делает, поэтому для 10 + obj логичнее добавлять в начало строки
 {
-	MyString temp = obj;
+	int newLength = obj.GetLength() + count;
+	char* buff = new char[newLength + 1];
+
 	for (int i = 0; i < count; i++)
 	{
-		++temp; // в задании написано в конец строки, но obj + 10 уже это делает, поэтому для 10 + obj логичнее добавлять в начало строки
+		buff[i] = '*';
 	}
+
+	for (int i = 0; i < obj.GetLength(); i++)
+	{
+		buff[count + i] = obj.GetStr()[i];
+	}
+	buff[newLength] = '\0';
+	
+	MyString temp(buff);
+	delete[] buff;
 	return temp;
 }
 

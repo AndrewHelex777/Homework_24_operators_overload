@@ -92,7 +92,7 @@ int main()
 	MyString estr2 = estr1;
 	cout << "estr2 = estr1 (copy): " << estr2 << endl;
 	MyString estr3 = move(estr1);
-	cout << "estr3 = estr1 (move): " << estr2 << endl;
+	cout << "estr3 = estr1 (move): " << estr3 << endl;
 	cout << "Length of estr1 after move: " << estr1.GetLength() << endl;
 
 	MyString ustr;
