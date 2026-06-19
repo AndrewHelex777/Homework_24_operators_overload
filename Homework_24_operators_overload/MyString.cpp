@@ -351,6 +351,6 @@ istream& operator>>(istream& is, MyString& obj)
 	char buff[100];
 	is.getline(buff, 100);
 	MyString temp(buff);
-	obj.MyStrcpy(temp);
+	obj = temp;
 	return is;
 }
