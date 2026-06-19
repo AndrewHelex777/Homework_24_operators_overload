@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="Homework_24_operators_overload/Homework_24_operators_overload.vcxproj" Id="2c484c6d-dca9-4f54-9ba3-ae66dfc994f5" />
+</Solution>
